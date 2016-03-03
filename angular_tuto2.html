@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 
 <!DOCTYPE html>
-<html>
+<html ng-app="app2">
 <head>
   <meta charset="utf-8">
   <title></title>
 </head>
 <body>
 
+  <!--Multiple views w/ 1 controller -->
+  <p ng-controller="ctrl1">
+    First random number : {{randomNum1}}
+  </p>
+  <p ng-controller="ctrl1">
+    Second random number : {{randomNum2}}
+  </p>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
   <script src="js/ex2.js"></script>
