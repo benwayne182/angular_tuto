@@ -25,14 +25,17 @@ app4.controller('eventCtrl', function($scope) {
   $scope.daytimeButton = true;
 
   // Used for table
-  $scope.capitals = [
-    {"City": "Paris",
-    "Country": "France"},
-    {"City": "Madrid",
-    "Country": "Spain"},
-    {"City": "Berlin",
-    "Country": "Germany"},
-    {"City": "London",
-    "Country": "England"}
-  ];
+  $scope.capitals = [{
+    "City": "Paris",
+    "Country": "France"
+  }, {
+    "City": "Madrid",
+    "Country": "Spain"
+  }, {
+    "City": "Berlin",
+    "Country": "Germany"
+  }, {
+    "City": "London",
+    "Country": "England"
+  }];
 });

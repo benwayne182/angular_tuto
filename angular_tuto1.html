@@ -1,48 +1,52 @@
 <!doctype html>
-<html ng-app="app1"
-ng-init="person = {fName: 'Ben', lName: 'Wayne'};
+<html ng-app="app1" ng-init="person = {fName: 'Ben', lName: 'Wayne'};
 capitals = [{city: 'Paris', country: 'France'}, {city: 'Madrid', country: 'Spain'}, {city: 'Washington DC', country: 'USA'}]">
-<head>
-  <title>Sum</title>
-</head>
-<body>
+  <head>
+    <title>Sum</title>
+  </head>
+  <body>
 
-  <div ng-controller="ctrl1">
+    <div ng-controller="ctrl1">
 
-    <span>Values:</span>
+      <span>Values:</span>
 
-    <input type="text" ng-model="first"/>
-    <input type="text" ng-model="second"/>
+      <input type="text" ng-model="first"/>
+      <input type="text" ng-model="second"/>
 
-    <button ng-click="updateValue()">Sum</button>
-    <br><br>
+      <button ng-click="updateValue()">Sum</button>
+      <br><br>
 
-    {{calculation}}
+      {{calculation}}
 
-    <br>
-    -----------
-    <br>
-    <p>
-      159 + 23 = {{159+23}}
-    </p>
-    <p>
-      Premiere valeur {{first}}
-    </p>
-    <p>
-      Deuxieme valeur <span data-ng-bind="second"></span>
-    </p>
-    <p>
-      {{person.fName + " " + person.lName}} you entered {{first + " and " + second}}
-    </p>
-    <ul>
-      <li ng-repeat = "capital in capitals">
-        {{ 'City: ' + capital.city + ', Country: ' + capital.country}}
-      </li>
-    </ul>
+      <br>
+      -----------
+      <br>
+      <p>
+        159 + 23 =
+        {{159+23}}
+      </p>
+      <p>
+        Premiere valeur
+        {{first}}
+      </p>
+      <p>
+        Deuxieme valeur
+        <span data-ng-bind="second"></span>
+      </p>
+      <p>
+        {{person.fName + " " + person.lName}}
+        you entered
+        {{first + " and " + second}}
+      </p>
+      <ul>
+        <li ng-repeat="capital in capitals">
+          {{ 'City: ' + capital.city + ', Country: ' + capital.country}}
+        </li>
+      </ul>
 
-  </div>
-  <!-- Load the AngularJS library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="js/ex1.js"></script>
-</body>
+    </div>
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/ex1.js"></script>
+  </body>
 </html>

@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 
-<html ng-app="app2" ng-cloak> <!--ng-cloak to not show the html code before AngularJS process it-->
-<head>
-  <meta charset="utf-8">
-  <title>Numbers</title>
-  <style>
-  [ng\:cloak], [ng-cloak], .ng-cloak {
-    display: none;
-  }
-  </style>
-</head>
-<body>
+<html ng-app="app2" ng-cloak>
+  <!--ng-cloak to not show the html code before AngularJS process it-->
+  <head>
+    <meta charset="utf-8">
+    <title>Numbers</title>
+    <style>
+      [ng\:cloak],
+      [ng-cloak],
+      .ng-cloak {
+        display: none;
+      }
 
-  <!--Multiple views w/ 1 controller -->
-  <p ng-controller="ctrl1">
-    First random number : {{randomNum1}}
-  </p>
-  <p ng-controller="ctrl1">
-    Second random number : {{randomNum2}}
-  </p>
+    </style>
+  </head>
+  <body>
 
-  <!-- Multiple controllers on 1 page-->
-  <p ng-controller="evenNumCtrl">An even number {{even}}</p>
+    <!--Multiple views w/ 1 controller -->
+    <p ng-controller="ctrl1">
+      First random number :
+      {{randomNum1}}
+    </p>
+    <p ng-controller="ctrl1">
+      Second random number :
+      {{randomNum2}}
+    </p>
 
-  <p ng-controller="oddNumCtrl">An odd number {{odd}}</p>
+    <!-- Multiple controllers on 1 page-->
+    <p ng-controller="evenNumCtrl">An even number
+      {{even}}</p>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-  <script src="js/ex2.js"></script>
-</body>
+    <p ng-controller="oddNumCtrl">An odd number
+      {{odd}}</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/ex2.js"></script>
+  </body>
 </html>
