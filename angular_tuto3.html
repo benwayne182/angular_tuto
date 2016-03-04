@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html ng-app="app3" ng-cloak> <!--ng-cloak to not show the html code before AngularJS process it-->
+<head>
+  <title>List</title>
+  <style>
+  [ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+
+  <div id="groceryList", ng-controller="gListCtrl">
+    <h1 class="ListeTitle">{{groceries.length}} groceries to get</h1>
+
+    <p>Size of the groceries list : <span ng-bind="groceries.length"></span></p>
+
+    <ol>
+      <!-- first item of the list-->
+      <li>{{groceries[1].item}}</li>
+    </ol>
+    <p>
+      ---------
+    </p>
+    <ol start="2">
+      <!-- show a part of the list -->
+      <li ng-repeat="grocery in groceries" ng-if="$index > 0">{{grocery.item}} {{$index}}</li>
+      <!-- can replace $index by $odd, $even, $first, $last, $middle -->
+    </ol>
+
+    <!-- ng-repeat-start and ng-repeat-end allow us to use ng-repeat on 2 elements rather then on just one -->
+    <table>
+      <tr ng-repeat-start="grocery in groceries">
+        <td>
+          {{grocery.item}}
+        </td>
+        <tr ng-repeat-end>
+          <td>
+            purchased : {{grocery.purchased}}
+          </td>
+        </tr>
+      </table>
+      <!-- Change date model -->
+      <h3>Change 1st item :</h3>
+      <input ng-model="groceries[0].item" />
+
+      <p>
+        ----------
+      </p>
+      <!-- ng-include inputs a HTML fragment into a page. If you get the error "Cross origin requests are only supported for protocol schemes" that is because this page must be served from a server.  -->
+      <h3>Grocery List</h3>
+      <div ng-include="'grocerylist.html'"></div>
+
+      <!-- We can also dynamically load different HTML partials -->
+      <label>
+        <!-- showList will represent the HTML returned -->
+        <input type="checkbox" ng-model="showList">
+        Show Unordered List
+      </label>
+      <ng-include src="getList()"></ng-include>
+
+
+      <p>
+        ---------
+      </p>
+
+      <!-- ng-switch allows us to conditionally insert or remove an element in the document -->
+      <label>Type a number (1 to 4):
+        <input type="text" ng-model="someNumber" />
+      </label>
+      <div ng-switch="someNumber">
+        <p ng-switch-when="1">You entered 1</p>
+        <p ng-switch-when="2">You entered 2</p>
+        <p ng-switch-when="3">You entered 3</p>
+        <p ng-switch-when="4">You entered 4</p>
+        <p ng-switch-default="1">Not Following Directions</p>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/ex3.js"></script>
+  </body>
+  </html>
