@@ -64,7 +64,14 @@
         {{randomStr}}</p>
       <p>10 Characters :
         {{randomStr | limitTo:10}}</p>
-      <p>
+        <p> Default array
+          <ul>
+            <li ng-repeat="item in randArray">
+              {{item}}
+            </li>
+          </ul>
+        </p>
+      <p> 3 first items
         <ul>
           <li ng-repeat="item in randArray | limitTo:3">
             {{item}}
