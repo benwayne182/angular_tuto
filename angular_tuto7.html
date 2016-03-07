@@ -1,6 +1,8 @@
 <!doctype html>
 <html ng-app="app7" ng-cloak>
   <head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
     <title>Inheritance</title>
     <style>
       [ng\:cloak],
@@ -22,7 +24,7 @@
         Sound :
         {{parent.sound}}
       </p>
-      <button ng-click=parent.animalClick()>Animal Data</button><br>
+      <button ng-click=parent.animalClick() class="btn btn-default">Animal Data</button><br>
 
     </div>
 
@@ -35,10 +37,10 @@
         Sound :
         {{dog.child.sound}}
       </p>
-      <button ng-click=dog.child.animalClick()>Dog Data</button><br>
-      <button ng-click=dog.child.dogData()>More Dog Data</button><br>
+      <button ng-click=dog.child.animalClick() class="btn btn-default">Dog Data</button><br>
+      <button ng-click=dog.child.dogData() class="btn btn-default">More Dog Data</button><br>
 
-      <input ng-model="dog.child.bark"/><br><br>
+      <input ng-model="dog.child.bark" class="form-control"/><br><br>
       <span>New Bark : {{dog.child.bark}}</span>
 
     </div>
