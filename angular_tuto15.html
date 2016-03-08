@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="app15" ng-cloak>
+  <head>
+    <title>Service http</title>
+    <style>
+      [ng\:cloak],
+      [ng-cloak],
+      .ng-cloak {
+        display: none;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div ng-controller="mainCtrl">
+
+      <button ng-click="getData()">Data</button>
+      <br><br>
+
+      {{players}}
+
+      <ul>
+        <li ng-repeat="player in players">
+          {{ player.name + " hit " + player.hr +
+          " Home Runs"}}
+        </li>
+      </ul>
+
+      <br>
+
+      <h4>Translation</h4>
+      <input type="text" ng-model="wordsToTranslate"/>
+      <br><br>
+      <button ng-click="translate()">Translate</button>
+      <br><br>
+      {{translated}}
+
+    </div>
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="js/ex15.js"></script>
+  </body>
+</html>
